@@ -1,13 +1,14 @@
 package v3
 
-type Rke2Config struct {
-	// rke2 Kubernetes version, unset the value indicates an unmanaged cluster
-	Version             string `yaml:"kubernetes_version" json:"kubernetesVersion,omitempty"`
-	Rke2UpgradeStrategy `yaml:"rke2_upgrade_strategy,omitempty" json:"rke2upgradeStrategy,omitempty"`
+//K3sConfig provides desired configuration for k3s clusters
+type ClusterConfig struct {
+	// k3s Kubernetes version, unset the value indicates an unmanaged cluster
+	Version                string `yaml:"kubernetes_version" json:"kubernetesVersion,omitempty"`
+	ClusterUpgradeStrategy `yaml:"cluster_upgrade_strategy,omitempty" json:"k3supgradeStrategy,omitempty"`
 }
 
-//rke2UpgradeStrategy provides configuration to the downstream system-upgrade-controller
-type Rke2UpgradeStrategy struct {
+//K3sUpgradeStrategy provides configuration to the downstream system-upgrade-controller
+type ClusterUpgradeStrategy struct {
 	// How many controlplane nodes should be upgrade at time, defaults to 1
 	ServerConcurrency int `yaml:"server_concurrency" json:"serverConcurrency,omitempty" norman:"min=1"`
 	// How many workers should be upgraded at a time

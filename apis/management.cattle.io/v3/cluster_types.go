@@ -113,8 +113,7 @@ type ClusterSpec struct {
 	DisplayName                         string              `json:"displayName" norman:"required"`
 	Description                         string              `json:"description"`
 	Internal                            bool                `json:"internal" norman:"nocreate,noupdate"`
-	K3sConfig                           *K3sConfig          `json:"k3sConfig,omitempty"`
-	Rke2Config                          *Rke2Config         `json:"rke2Config,omitempty"`
+	ClusterConfig                       *ClusterConfig      `json:"clusterConfig,omitempty"`
 	ImportedConfig                      *ImportedConfig     `json:"importedConfig,omitempty" norman:"nocreate,noupdate"`
 	GoogleKubernetesEngineConfig        *MapStringInterface `json:"googleKubernetesEngineConfig,omitempty"`
 	AzureKubernetesServiceConfig        *MapStringInterface `json:"azureKubernetesServiceConfig,omitempty"`
