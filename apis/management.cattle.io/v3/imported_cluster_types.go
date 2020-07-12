@@ -4,7 +4,7 @@ package v3
 type ClusterConfig struct {
 	// k3s Kubernetes version, unset the value indicates an unmanaged cluster
 	Version                string `yaml:"kubernetes_version" json:"kubernetesVersion,omitempty"`
-	ClusterUpgradeStrategy `yaml:"cluster_upgrade_strategy,omitempty" json:"k3supgradeStrategy,omitempty"`
+	ClusterUpgradeStrategy `yaml:"cluster_upgrade_strategy,omitempty" json:"clusterupgradeStrategy,omitempty"`
 }
 
 //K3sUpgradeStrategy provides configuration to the downstream system-upgrade-controller
